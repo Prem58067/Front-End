@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide by Zero Error Handling</title>
+</head>
+<body>
+    <h1>Divide by Zero Error Handling</h1>
+    <p id="result"></p>
+
+    <script>
+        function divideByZero(num) {
+            try {
+                if (num === 0) {
+                    throw new Error("Cannot divide by zero.");
+                }
+                let result = 10 / num;
+                document.getElementById("result").textContent = `Result: ${result}`;
+            } catch (error) {
+                document.getElementById("result").textContent = `Error: ${error.message}`;
+            }
+        }
+
+        divideByZero(0);
+    </script>
+</body>
+</html>
